@@ -3,9 +3,13 @@ extends layout
 block content
 	h1 Magellan's Travels
 	p  Magellan departed Spain in 1519 on a grand expedition.
+	//--pulling data from our objects array, injecting them as 
+	//--variables in Jade, referencing name of array and chaining on 
+	//--keys for our data strings.
 	p #{expeditions.name}
 	p #{expeditions.date}
 
+	//-~!~!~!~!~!~!~!~! comments here please !~!~!~!~!~!~!~!~!~!\\
 	if expeditions.nextlocation !== "THEEND"
 		a(href="#{expeditions.nextlocation}") Next Location
 

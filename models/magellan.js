@@ -1,3 +1,4 @@
+//all our data as objects in an array
 var expeditions = [
 	{
 	name            : "Seville",
