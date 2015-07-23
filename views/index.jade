@@ -1,0 +1,11 @@
+extends layout
+
+block content
+	h1 Magellan's Travels
+	p  Magellan departed Spain in 1519 on a grand expedition.
+	p #{expeditions.name}
+	p #{expeditions.date}
+
+	if expeditions.nextlocation !== "THEEND"
+		a(href="#{expeditions.nextlocation}") Next Location
+
