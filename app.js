@@ -22,12 +22,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.get('/', indexController.index);
 
 //colon denotes a dynamic route. Denotes the name of the route we want to make dynamic. Second argument is a th
-app.get('/:nextLocation', indexController.nextPage);
+app.get('/next/:nextLocation', indexController.nextPage);
 
 
-// app.post('/'), function(req, res){
-// 	res.redirect('Page not available!')
-// }
 var server = app.listen(8812, function() {
 	console.log('WE HAVE LIFT OFF AT: ' + server.address().port);
 });

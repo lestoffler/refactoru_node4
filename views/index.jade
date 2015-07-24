@@ -3,13 +3,23 @@ extends layout
 block content
 	h1 Magellan's Travels
 	p  Magellan departed Spain in 1519 on a grand expedition.
+	
 	//--pulling data from our objects array, injecting them as 
 	//--variables in Jade, referencing name of array and chaining on 
 	//--keys for our data strings.
-	p #{expeditions.name}
-	p #{expeditions.date}
+	if error === "notfound" 
+		h1 This location does not exist
 
-	//-~!~!~!~!~!~!~!~! comments here please !~!~!~!~!~!~!~!~!~!\\
-	if expeditions.nextlocation !== "THEEND"
-		a(href="#{expeditions.nextlocation}") Next Location
 
+	else 
+		p #{expeditions.name}
+		p #{expeditions.date}
+
+		
+		if expeditions.nextlocation !== "THEEND" 
+			a(href="/next/#{expeditions.nextlocation}") Next Location
+
+		else 
+			h1 End of Voyage
+
+		
